@@ -1,0 +1,1 @@
+export type MakeAllPositive = (listOfNumbers: number[]) => number[]

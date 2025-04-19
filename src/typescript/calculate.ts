@@ -1,16 +1,35 @@
-export function extractValues<T, K extends keyof T>(listOfData: T[], valueToCatch: K): T[K][] {
-    const extractedValues: T[K][] = []
+import { Calculate } from "../types/calculate.types";
 
-    for (const item of listOfData) {
-        const value = item[valueToCatch]
+export const calculate: Calculate = (operation, a, b) => {
+    let result: number = 0;
 
-        if (value !== undefined) {
-            extractedValues.push(value)
-        }
+    switch (operation) {
+        case 'add':
+          result = a + b;
+          break;
+
+        case 'subtract':
+          result = a - b;
+          break;
+        
+        case 'multiply':
+          result = a * b;
+          break;
+        
+        case 'divide':
+          if (b === 0) {
+            throw new Error(`Division by zero: attempted to divide ${a} by ${b}`);
+          }
+          result = a / b;
+          break;
+        
+        default:
+          // This case should theoretically never occur, but you never know!
+          throw new Error(`Invalid operation: ${operation}`);
     }
-
-    return extractedValues
+    return result;
 }
 
-console.log(extractValues([{ id: 1, name: 'Alice' }, { id: 2, name: 'Bob' }, { id: 3, name: 'Charlie' }], 'name'))
-
+// For direct testing without automated tests (uncomment the following block) - Use:
+// yarn ts-node src/typescript/calculate.ts
+// console.log(calculate('multiply', 1, 5));

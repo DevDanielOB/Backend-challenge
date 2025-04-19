@@ -1,51 +1,45 @@
-import { extractValues } from './calculate';
+import { calculate } from './calculate';
 
-describe('extractValues', () => {
-    it('should extract the specified property values from the list of objects', () => {
-        const data = [
-            { id: 1, name: 'Alice' },
-            { id: 2, name: 'Bob' },
-            { id: 3, name: 'Charlie' }
-        ];
-        const result = extractValues(data, 'name');
-        expect(result).toEqual(['Alice', 'Bob', 'Charlie']);
+describe('calculate', () => {
+    it('should add two numbers correctly', () => {
+        const result = calculate('add', 2, 3);
+        expect(result).toBe(5);
 
-
+        console.log('\n[TEST 1] Addition of 2 + 3:');
+        console.table([{ operation: 'add', a: 2, b: 3, result }]);
     });
 
-    it('should return an empty array if the property does not exist in any object', () => {
-        const data = [
-            { id: 1, name: 'Alice' },
-            { id: 2, name: 'Bob' },
-            { id: 3, name: 'Charlie' }
-        ];
-        const result = extractValues(data, 'age' as any);
-        expect(result).toEqual([]);
+    it('should subtract two numbers correctly', () => {
+        const result = calculate('subtract', 5, 3);
+        expect(result).toBe(2);
+
+        console.log('\n[TEST 2] Subtraction of 5 - 3:');
+        console.table([{ operation: 'subtract', a: 5, b: 3, result }]);
     });
 
-    it('should handle an empty array input', () => {
-        const data: { id: number; name: string }[] = [];
-        const result = extractValues(data, 'name');
-        expect(result).toEqual([]);
+    it('should multiply two numbers correctly', () => {
+        const result = calculate('multiply', 4, 3);
+        expect(result).toBe(12);
+
+        console.log('\n[TEST 3] Multiplication of 4 * 3:');
+        console.table([{ operation: 'multiply', a: 4, b: 3, result }]);
     });
 
-    it('should extract values of different types', () => {
-        const data = [
-            { id: 1, active: true },
-            { id: 2, active: false },
-            { id: 3, active: true }
-        ];
-        const result = extractValues(data, 'active');
-        expect(result).toEqual([true, false, true]);
+    it('should divide two numbers correctly', () => {
+        const result = calculate('divide', 6, 2);
+        expect(result).toBe(3);
+
+        console.log('\n[TEST 4] Division of 6 / 2:');
+        console.table([{ operation: 'divide', a: 6, b: 2, result }]);
     });
 
-    it('should ignore undefined values in the objects', () => {
-        const data = [
-            { id: 1, name: 'Alice' },
-            { id: 2 },
-            { id: 3, name: 'Charlie' }
-        ];
-        const result = extractValues(data, 'name');
-        expect(result).toEqual(['Alice', 'Charlie']);
+    it('should throw an error when dividing by zero', () => {
+        console.log('\n[TEST 5] Division by zero:');
+        try {
+            calculate('divide', 6, 0);
+        } catch (error: any) {
+            console.table([{ operation: 'divide', a: 6, b: 0, error: error.message }]);
+            expect(error.message).toBe('Division by zero: attempted to divide 6 by 0');
+        }
     });
 });
