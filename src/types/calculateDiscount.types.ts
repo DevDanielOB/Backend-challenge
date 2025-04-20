@@ -1,0 +1,1 @@
+export type calculateDiscount = (price: number, isPremiumCustomer: boolean) => number

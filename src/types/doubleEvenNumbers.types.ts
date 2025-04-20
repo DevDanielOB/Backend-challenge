@@ -1,0 +1,1 @@
+export type doubleEvenNumbersType = (numbers: number[]) => number[]
