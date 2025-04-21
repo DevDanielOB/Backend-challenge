@@ -19,10 +19,3 @@ export const doubleEvenNumbers: doubleEvenNumbersType = (numbers) => {
   function double(number: number): number {
     return number * 2;
   }
-
-  // Use:
-  // yarn ts-node src/clean-code/doubleEvenNumbers.ts
-
-//   const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-//   const doubledEvens = doubleEvenNumbers(numbers);
-//   console.log(doubledEvens);

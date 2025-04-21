@@ -15,13 +15,3 @@ export const getDiscountRate: calculateDiscount = (price, isPremiumCustomer) => 
     const finalPrice = price * (1 - discountRate);
     return finalPrice;
   }
-  
-  
-  // Use:
-  // yarn ts-node src/clean-code/calculateDiscount.ts
-  
-//   const price = 110;
-//   const isPremiumCustomer = true;
-  
-//   const finalPrice = applyDiscount(price, isPremiumCustomer);
-//   console.log(`Final price: ${finalPrice}`);

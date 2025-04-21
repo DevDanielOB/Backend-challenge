@@ -10,14 +10,3 @@ import { Item } from "../types/item.types";
       }
     }
   }
-
-  // Use:
-  // yarn ts-node src/clean-code/processItems.ts
-
-//   const items: Item[] = [
-//     { name: 'Banana', price: 50 },
-//     { name: 'Apple', price: 150 },
-//     { name: 'Orange', price: 250 },
-//   ];
-  
-//   processItems(items);
