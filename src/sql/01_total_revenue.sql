@@ -1,6 +1,3 @@
-SELECT id, product, quantity, price
-FROM sales;
-
 SELECT
   product,
   quantity,
