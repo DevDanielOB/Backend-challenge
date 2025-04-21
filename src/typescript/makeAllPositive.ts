@@ -9,4 +9,4 @@ export const makeAllPositive: MakeAllPositive = (listOfNumbers) => {
 
 // For direct testing without automated tests (uncomment the following block)- Use:
 // yarn ts-node src/typescript/makeAllPositive.ts
-console.log(makeAllPositive([1, -2, 3, -4, 5]));
+// console.log(makeAllPositive([1, -2, 3, -4, 5]));
