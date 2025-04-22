@@ -1,6 +1,7 @@
 # 🚀 Backend Challenge
 
 Este repositório contém a solução para o desafio de backend. Siga os passos abaixo para rodar o projeto localmente e utilizar as funcionalidades disponíveis.
+AS RESOLUÇÔES ESTÃO DENTRO DA PASTA SRC, CADA UMA CORRESPONDENTE AO PROBLEMA PROPOSTO - SQL, CLEAN CODE OU TYPESCRIPT
 
 ---
 
